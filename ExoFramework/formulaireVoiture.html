@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire nouvelle voiture</title>
+</head>
+<body>
+    <form action="./creerVoiture.php" method="POST">
+        <fieldset>
+            <legend>Créer une nouvelle voiture</legend>
+            <label for="imma">Immatriculation</label>
+            <input type="text" name="imma" id="imma" required>
+            <label for="marque">Marque</label>
+            <input type="text" name="marque" id="marque">
+            <label for="couleur">Couleur</label>
+            <input type="text" name="couleur" id="couleur">
+            <input type="submit" value="Enregistrer">
+        </fieldset>
+    </form>
+</body>
+</html>
