@@ -1,5 +1,5 @@
 <?php
-    
+    require_once "Model.php";
     class Voiture {
         private $immatriculation, $marque, $couleur;
         public function __construct($i = NULL, $m = NULL, $c = NULL) {
@@ -12,5 +12,11 @@
 
         public function afficher() {
             return $this->immatriculation. ", marque: ". $this->marque .", couleur: ". $this->couleur;
+        }
+
+        public static function getAllVoitures() {
+            $rep = Model::$pdo ->query("SELECT * FROM vehicule");
+            $table_obj = $rep->fetchAll(PDO::FETCH_CLASS, "Voiture");
+            return $table_obj;
         }
     }

@@ -1,9 +1,9 @@
 <?php
     require_once "Model.php";
-    
-    $rep = Model::$pdo ->query("SELECT * FROM vehicule");
-    $table_obj = $rep->fetchAll(PDO::FETCH_CLASS, "Voiture");
+    require_once "Voiture.php";
 
-    foreach ($table_obj as $key => $value) {
-        echo $table_obj[$key]->afficher() ."<br>";
+    $table = Voiture::getAllVoitures();
+
+    foreach ($table as $key => $value) {
+        echo $table[$key]->afficher() ."<br>";
     }
